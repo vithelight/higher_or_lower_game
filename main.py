@@ -53,8 +53,8 @@ def compare_user_input(user_input, winner):
 def main():
   print(logo)
   score = 0
+  object_a, object_b = get_two_random_object(data)
   while True:
-    object_a, object_b = get_two_random_object(data)
     winner = compare_objects(object_a, object_b)
     objects = {
       0: 'Not valid',
@@ -68,6 +68,7 @@ def main():
       score += 1
       system('clear')
       print(colored(f'\nYou\'re correct. Current Score: {score}', 'green'))
+      object_a, object_b = winner, choice(data)
     else:
       system('clear')
       print(colored(f'\nSorry, that\'s wrong. Final score: {score}', 'red'))
